@@ -1,0 +1,683 @@
+/* =========================================================
+   HW07 外部樣式表
+   專案：高雄橋頭糖廠報導
+   色彩：藍綠色系
+   說明：所有網站視覺樣式集中於此檔案，不在 HTML 使用 style。
+   ========================================================= */
+
+/* 1. 基礎設定與色彩變數 */
+:root {
+    --ink: #173b43;
+    --muted: #58777b;
+    --deep-teal: #0d4f59;
+    --teal: #147b7d;
+    --sea: #36a6a0;
+    --mint: #dff2ec;
+    --pale-blue: #e8f3f6;
+    --paper: #f5faf8;
+    --white: #ffffff;
+    --line: #c9dfdc;
+    --accent: #d49a55;
+    --shadow: 0 14px 36px rgba(20, 75, 81, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 8% 12%, rgba(54, 166, 160, 0.09), transparent 26rem),
+        linear-gradient(180deg, #f4faf9 0%, #edf6f4 55%, #f7fbfa 100%);
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* 2. 共用文字與連結 */
+p {
+    margin: 0 0 1.15rem;
+}
+
+a {
+    color: #08777b;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+a:hover {
+    color: #0b4d59;
+}
+
+a:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+strong {
+    color: #145b62;
+}
+
+small {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 16px;
+    z-index: 20;
+    padding: 8px 14px;
+    color: var(--white);
+    background: var(--deep-teal);
+    border-radius: 8px;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+/* 3. 首頁主視覺 */
+.site-header {
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    background: linear-gradient(125deg, #0b414f 0%, #0e6870 55%, #168b84 100%);
+}
+
+.header-inner {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 76px 0 70px;
+}
+
+.eyebrow,
+.section-kicker,
+.nav-kicker {
+    margin-bottom: 12px;
+    color: #a9e2d7;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.site-header h1 {
+    max-width: 900px;
+    margin: 0 0 18px;
+    color: var(--white);
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+}
+
+.site-header h1 span {
+    color: #a9e2d7;
+}
+
+.hero-lead {
+    max-width: 720px;
+    margin-bottom: 24px;
+    color: #e1f3ef;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.hero-focus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.hero-focus strong {
+    color: #c9eee5;
+}
+
+.reading-focus {
+    padding: 3px 10px;
+    color: #164b50;
+    background: #d7f1e8;
+    border-radius: 5px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    margin-bottom: 8px;
+    color: #d3ebe8;
+    font-size: 0.94rem;
+}
+
+.report-disclaimer {
+    color: #b8d9d6;
+}
+
+.header-decoration {
+    position: absolute;
+    right: -100px;
+    bottom: -260px;
+    width: 620px;
+    height: 620px;
+    border: 1px solid rgba(219, 247, 239, 0.18);
+    border-radius: 50%;
+    box-shadow: 0 0 0 44px rgba(219, 247, 239, 0.04),
+                0 0 0 92px rgba(219, 247, 239, 0.035);
+}
+
+/* 4. 12 欄 Grid System：側邊導覽 3 欄、主要內容 9 欄 */
+.page-shell {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 28px;
+    width: min(1240px, calc(100% - 48px));
+    margin: 42px auto 72px;
+    align-items: start;
+}
+
+.side-nav {
+    grid-column: span 3;
+    position: sticky;
+    top: 24px;
+    padding: 24px 20px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.side-nav-heading {
+    padding: 0 8px 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.side-nav .nav-kicker {
+    margin-bottom: 2px;
+    color: var(--teal);
+}
+
+.side-nav h2 {
+    margin: 0;
+    color: var(--deep-teal);
+    font-size: 1.35rem;
+}
+
+.side-nav ul {
+    display: grid;
+    gap: 5px;
+    margin: 14px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 9px;
+    color: var(--ink);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.side-nav a span {
+    color: var(--teal);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.side-nav a:hover {
+    color: var(--deep-teal);
+    background: var(--mint);
+}
+
+.side-back-top {
+    display: inline-flex !important;
+    margin: 4px 8px 0;
+    color: var(--teal) !important;
+    font-size: 0.9rem;
+}
+
+/* 5. 主要報導卡片 */
+main {
+    grid-column: span 9;
+    min-width: 0;
+}
+
+.report {
+    display: grid;
+    gap: 24px;
+}
+
+.content-card {
+    min-width: 0;
+    padding: clamp(24px, 4vw, 42px);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 24px;
+}
+
+.section-kicker {
+    margin-bottom: 4px;
+    color: var(--teal);
+}
+
+.content-card h2 {
+    margin: 0 0 22px;
+    padding-left: 16px;
+    color: var(--deep-teal);
+    border-left: 5px solid var(--sea);
+    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+    line-height: 1.4;
+}
+
+.content-card h3 {
+    margin: 26px 0 12px;
+    color: #176d70;
+    font-size: 1.2rem;
+}
+
+.content-card h4 {
+    margin: 5px 0 7px;
+    color: var(--deep-teal);
+    font-size: 1.08rem;
+}
+
+.content-card p:last-child {
+    margin-bottom: 0;
+}
+
+.info-strip {
+    display: grid;
+    gap: 8px;
+    margin-top: 26px;
+    padding: 18px 20px;
+    background: var(--pale-blue);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+}
+
+.info-strip p {
+    margin: 0;
+}
+
+.info-strip strong {
+    display: inline-block;
+    min-width: 92px;
+    margin-right: 8px;
+}
+
+.quote-note {
+    margin-top: 24px;
+    padding: 18px 22px;
+    background: #e8f5f1;
+    border: 1px solid #c6e5dc;
+    border-radius: 12px;
+}
+
+.quote-note > strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.quote-note p {
+    margin: 0;
+}
+
+/* 6. Grid System 特色卡片 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0 28px;
+}
+
+.feature-item {
+    padding: 18px;
+    background: linear-gradient(145deg, #eff8f6, #e4f2f3);
+    border: 1px solid #cce4e1;
+    border-radius: 13px;
+}
+
+.feature-number {
+    color: #29938f;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.feature-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+.route-note {
+    margin: 12px 0 18px;
+    padding: 10px 16px;
+    background: #eef7f7;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+}
+
+.route-list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.route-list li {
+    margin-bottom: 9px;
+    padding-left: 5px;
+}
+
+/* 7. 表格 */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background: var(--white);
+    text-align: left;
+}
+
+caption {
+    padding: 12px;
+    color: var(--muted);
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+}
+
+thead th {
+    color: #124e57;
+    background: #dcefeb;
+}
+
+tbody th {
+    color: #145b62;
+    background: #f0f8f6;
+}
+
+tbody tr:nth-child(even) td {
+    background: #f7fbfa;
+}
+
+/* 8. 圖片、影音與地圖 */
+.photo-figure {
+    margin: 22px 0 0;
+    overflow: hidden;
+    background: #eef7f5;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.photo-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+figcaption {
+    padding: 14px 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.media-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    overflow: hidden;
+    background: #dcebea;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.media-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-frame {
+    aspect-ratio: 4 / 3;
+    max-height: 480px;
+}
+
+.source-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* 9. 參觀提醒與資料來源 */
+.tips-card {
+    background: linear-gradient(135deg, #e8f5f0, #e9f3f7);
+    border-left: 5px solid #24918c;
+}
+
+details {
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid #c8e1dc;
+    border-radius: 10px;
+}
+
+summary {
+    color: var(--deep-teal);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+details ul {
+    margin-bottom: 0;
+    padding-left: 1.35rem;
+}
+
+details li {
+    margin: 7px 0;
+}
+
+.source-list {
+    padding-left: 1.35rem;
+}
+
+.source-list li {
+    margin-bottom: 12px;
+}
+
+/* 10. 頁尾 */
+.site-footer {
+    color: #d9efeb;
+    background: #103f4b;
+}
+
+.footer-inner {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 36px 0;
+    text-align: center;
+}
+
+.footer-inner p {
+    margin: 0;
+}
+
+.footer-title {
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.footer-inner small {
+    color: #a9ceca;
+}
+
+.back-top {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 16px;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.back-top:hover {
+    color: var(--deep-teal);
+    background: #d7f1e8;
+}
+
+/* 11. 平板：側欄改為上方導覽，內容改單欄 */
+@media (max-width: 900px) {
+    .page-shell {
+        gap: 20px;
+    }
+
+    .side-nav {
+        grid-column: 1 / -1;
+        position: static;
+    }
+
+    .side-nav ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    main {
+        grid-column: 1 / -1;
+    }
+}
+
+/* 12. 手機：導覽、卡片、表格與文字完整適應窄螢幕 */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .header-inner {
+        width: min(100% - 32px, 1180px);
+        padding: 52px 0 48px;
+    }
+
+    .site-header h1 {
+        font-size: clamp(1.85rem, 9vw, 2.6rem);
+    }
+
+    .hero-meta {
+        display: grid;
+        gap: 3px;
+    }
+
+    .page-shell {
+        width: calc(100% - 24px);
+        margin: 22px auto 42px;
+    }
+
+    .side-nav {
+        padding: 18px 14px;
+        border-radius: 13px;
+    }
+
+    .side-nav ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3px;
+    }
+
+    .side-nav a {
+        align-items: flex-start;
+        padding: 7px 5px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    .side-nav a span {
+        flex: 0 0 auto;
+        padding-top: 1px;
+    }
+
+    .content-card {
+        padding: 22px 18px;
+        border-radius: 13px;
+    }
+
+    .content-card h2 {
+        margin-bottom: 18px;
+        padding-left: 11px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+        padding: 15px;
+    }
+
+    .info-strip {
+        padding: 15px;
+    }
+
+    .info-strip strong {
+        display: block;
+        margin-bottom: 1px;
+    }
+
+    .map-frame {
+        aspect-ratio: 1 / 1;
+    }
+
+    .footer-inner {
+        width: calc(100% - 32px);
+    }
+}
+
+/* 13. 減少動態效果偏好 */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms;
+    }
+}

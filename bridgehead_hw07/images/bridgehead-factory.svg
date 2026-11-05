@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">橋頭糖廠工業場域示意插畫</title>
+<desc id="desc">藍綠色系的工業遺產插畫，包含舊式廠房、煙囪、甘蔗田與遠方丘陵。</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe4e4"/><stop offset="1" stop-color="#edf7ef"/></linearGradient>
+  <linearGradient id="building" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0e4c9"/><stop offset="1" stop-color="#c9d8c9"/></linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76b8a3"/><stop offset="1" stop-color="#286b67"/></linearGradient>
+</defs>
+<rect width="1200" height="720" fill="url(#sky)"/>
+<circle cx="950" cy="145" r="66" fill="#f4d99d" opacity=".85"/>
+<path d="M0 390 Q170 280 330 370 T660 355 T980 360 T1200 320 V720 H0Z" fill="#8dbfae"/>
+<path d="M0 455 Q200 390 400 455 T800 430 T1200 450 V720 H0Z" fill="url(#ground)"/>
+<!-- factory block -->
+<g stroke="#315d5b" stroke-width="9" stroke-linejoin="round">
+  <path d="M230 340 L410 250 L590 340 V555 H230Z" fill="url(#building)"/>
+  <path d="M410 250 L590 340 H230Z" fill="#d4c7a9"/>
+  <path d="M590 365 L760 285 L940 365 V555 H590Z" fill="#e6ddc6"/>
+  <path d="M760 285 L940 365 H590Z" fill="#c9c5a9"/>
+  <rect x="330" y="400" width="80" height="155" fill="#4d7773"/>
+  <rect x="450" y="400" width="80" height="155" fill="#4d7773"/>
+  <rect x="680" y="405" width="90" height="150" fill="#4d7773"/>
+  <rect x="810" y="405" width="80" height="150" fill="#4d7773"/>
+  <path d="M330 400 H410 M450 400 H530 M680 405 H770 M810 405 H890" fill="none" stroke="#d7e6d9" stroke-width="8"/>
+  <path d="M230 555 H940" fill="none" stroke="#244f51" stroke-width="14"/>
+</g>
+<!-- chimney -->
+<g stroke="#315d5b" stroke-width="8">
+  <path d="M165 180 H245 L265 390 H145Z" fill="#b86f58"/>
+  <path d="M155 225 H255 M150 285 H260 M145 345 H265" fill="none" stroke="#e8d7bd" stroke-width="13"/>
+  <path d="M150 180 H260 V155 H150Z" fill="#d7e2d7"/>
+</g>
+<!-- smoke -->
+<g fill="#ffffff" opacity=".52">
+  <circle cx="190" cy="120" r="35"/><circle cx="225" cy="95" r="45"/><circle cx="270" cy="72" r="34"/>
+</g>
+<!-- sugar cane foreground -->
+<g stroke="#d5efc2" stroke-width="8" stroke-linecap="round" fill="none">
+  <path d="M55 720 Q70 600 40 500 M90 720 Q110 610 145 510 M1120 720 Q1090 610 1120 500 M1160 720 Q1130 600 1180 530"/>
+  <path d="M45 560 Q5 525 10 485 M48 580 Q100 540 110 500 M140 565 Q185 520 190 480 M1115 565 Q1060 530 1050 485 M1140 580 Q1190 545 1195 500"/>
+</g>
+<!-- rail track -->
+<path d="M0 625 H1200" stroke="#d6e5df" stroke-width="12"/>
+<path d="M0 655 H1200" stroke="#d6e5df" stroke-width="12"/>
+<g stroke="#315d5b" stroke-width="7">
+  <path d="M80 610 V670 M180 610 V670 M280 610 V670 M380 610 V670 M480 610 V670 M580 610 V670 M680 610 V670 M780 610 V670 M880 610 V670 M980 610 V670 M1080 610 V670"/>
+</g>
+<text x="600" y="90" text-anchor="middle" fill="#17545b" font-family="sans-serif" font-size="30" letter-spacing="8">BRIDGEHEAD SUGAR FACTORY</text>
+</svg>
